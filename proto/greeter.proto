@@ -1,0 +1,17 @@
+syntax = "proto3";
+option go_package = "generated/greeterpb";
+
+package io.github.greeterpb;
+
+message GreetingRequest {
+    string Name = 1;
+}
+
+message Greeting {
+    string Greeting = 1;
+    string Language = 2;
+}
+
+service GreeterService {
+    rpc Greet(GreetingRequest) returns (Greeting);
+}
